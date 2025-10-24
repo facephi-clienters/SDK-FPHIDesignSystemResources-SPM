@@ -18,7 +18,7 @@ let package = Package(
         .target(
             name: "FPHIDesignSystemResources",
             resources: [
-                .process("Resources")
+                .copy("Resources")
             ]
         )
     ]
