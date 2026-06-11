@@ -44,8 +44,7 @@ Guia detallada:
 ### CocoaPods
 - Pod publicado: `FPHIDesignSystemResources`
 - Flujo previsto:
-  - `DEV/SNAPSHOT`: `.github/workflows/iOS-Design-Publish-DEV-SNAPSHOT.yml`
-  - `PRO`: `.github/workflows/iOS-Design-Publish-PRO.yml`
+  - `Design - Publish` (`.github/workflows/publishDesign.yml`)
 - La publicacion sigue el layout remoto normal:
   - indice en `/.specs/FPHIDesignSystemResources/<version>/FPHIDesignSystemResources.podspec`
   - tarball en `FPHIDesignSystemResources/<version>/FPHIDesignSystemResources-<version>.tar.gz`
@@ -57,8 +56,8 @@ Guia detallada:
 - Repo cliente/publico:
   - `facephi-clienters/SDK-FPHIDesignSystemResources-SPM`
 - El package iOS de DesignSystem es un source package, no un `binaryTarget`.
-- El workflow `DEV/SNAPSHOT` publica siempre primero en `facephi`.
-- El workflow `PRO` publica en `facephi` y luego sincroniza a `facephi-clienters` mediante el reusable:
+- El workflow `Design - Publish` publica siempre primero en `facephi`.
+- En `PRO`, el mismo workflow publica en `facephi` y luego sincroniza a `facephi-clienters` mediante el reusable:
   `.github/workflows/reusable_sync_spm_source_repo.yml`
 - Este flujo sirve como POC para mover mas packages SPM fuente entre `facephi` y `facephi-clienters` sin cambiar el contenido del package.
 
